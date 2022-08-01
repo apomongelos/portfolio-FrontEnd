@@ -1,0 +1,164 @@
+<div class="container">
+    <form
+      class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+      [formGroup]="updateUsrForm"
+      (ngSubmit)="submit()"
+    >
+      <h1 class="h3 mb-3 fw-normal">Modificar datos del usuario</h1>
+  
+      <div class="form-group mb-2">
+        <label for="firstName" class="mb-2">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          placeholder="Nombres"
+          formControlName="firstName"
+        />
+        <div
+          *ngIf="updateUsrForm.controls['firstName'].invalid && isSubmitted"
+          class="alert alert-danger"
+        >
+          <!-- (updateUsrForm.controls['firstName'].dirty ||
+              updateUsrForm.controls['firstName'].touched)) ||
+          (updateUsrForm.controls['firstName'].untouched && isSubmitted) -->
+          <div *ngIf="updateUsrForm.controls['firstName'].errors.required">
+            Nombres es requerido
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="lastName" class="mb-2">Apellidos</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          placeholder="Apellidos"
+          formControlName="lastName"
+        />
+        <div
+          *ngIf="updateUsrForm.controls['lastName'].invalid && isSubmitted"
+          class="alert alert-danger"
+        >
+          <!-- (updateUsrForm.controls['lastName'].dirty ||
+              updateUsrForm.controls['lastName'].touched)) ||
+          (updateUsrForm.controls['lastName'].untouched && isSubmitted) -->
+          <div *ngIf="updateUsrForm.controls['lastName'].errors.required">
+            Apellidos es requerido
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label for="email" class="mb-2">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="email"
+          placeholder="Email"
+          formControlName="email"
+        />
+        <div
+          *ngIf="updateUsrForm.controls['email'].invalid && isSubmitted"
+          class="alert alert-danger"
+        >
+          <!-- (updateUsrForm.controls['email'].dirty ||
+              updateUsrForm.controls['email'].touched)) ||
+          (updateUsrForm.controls['email'].untouched && isSubmitted) -->
+          <div *ngIf="updateUsrForm.controls['email'].errors.required">
+            Email es requerido
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label for="aboutMe" class="mb-2">Acerca de mi</label>
+        <input
+          type="text"
+          class="form-control"
+          id="aboutMe"
+          placeholder="Acerca de mi"
+          formControlName="aboutMe"
+        />
+        <div
+          *ngIf="updateUsrForm.controls['aboutMe'].invalid && isSubmitted"
+          class="alert alert-danger"
+        >
+          <!-- (updateUsrForm.controls['aboutMe'].dirty ||
+              updateUsrForm.controls['aboutMe'].touched)) ||
+          (updateUsrForm.controls['aboutMe'].untouched && isSubmitted) -->
+          <div *ngIf="updateUsrForm.controls['aboutMe'].errors.required">
+            Acerca de mi es requerido
+          </div>
+        </div>
+      </div>
+      <div class="form-group mb-2">
+        <label for="dateOfBirth" class="mb-2">Fecha de nacimiento</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dateOfBirth"
+          placeholder="yyyy-MM-dd"
+          formControlName="dateOfBirth"
+        />
+        <!-- <div
+          *ngIf="
+            (updateUsrForm.controls['dateOfBirth'].invalid &&
+              (updateUsrForm.controls['dateOfBirth'].dirty ||
+                updateUsrForm.controls['dateOfBirth'].touched)) ||
+            (updateUsrForm.controls['dateOfBirth'].untouched &&
+              isSubmitted)
+          "
+          class="alert alert-danger"
+        > -->
+        <div
+          *ngIf="
+            updateUsrForm.controls['dateOfBirth'].invalid && isSubmitted
+          "
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="updateUsrForm.controls['dateOfBirth'].errors.pattern"
+          >
+            Ingrese una fecha de nacimiento con el formato yyyy-MM-dd
+          </div>
+          <div
+            *ngIf="updateUsrForm.controls['dateOfBirth'].errors.required"
+            class="alert alert-danger"
+          >
+            Fecha de nacimiento es requerido
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group mb-2">
+        <label for="username" class="mb-2">Sobrenombre/Alias</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          placeholder="Sobrenombre"
+          formControlName="username"
+        />
+        <div
+          *ngIf="updateUsrForm.controls['username'].invalid && isSubmitted"
+          class="alert alert-danger"
+        >
+          <!-- (updateUsrForm.controls['username'].dirty ||
+              updateUsrForm.controls['username'].touched)) ||
+          (updateUsrForm.controls['username'].untouched && isSubmitted) -->
+          <div *ngIf="updateUsrForm.controls['username'].errors.required">
+            Sobrenombre es requerido
+          </div>
+        </div>
+      </div>
+  
+      <button
+        class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+        style="width: 100%"
+        type="submit"
+      >
+        Modificar perfil
+      </button>
+    </form>
+  </div>
+  

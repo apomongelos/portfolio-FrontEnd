@@ -1,0 +1,95 @@
+<div class="container">
+  <form
+    class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+    [formGroup]="createUniversityForm"
+    (ngSubmit)="submit()"
+  >
+    <h1 class="h3 mb-3 fw-normal">Agregar universidad</h1>
+
+    <div class="form-group mb-2">
+      <label for="name" class="mb-2">Nombre de la universidad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Nombre de la universidad"
+        formControlName="name"
+      />
+      <div
+        *ngIf="
+          (createUniversityForm.controls['name'].invalid &&
+            (createUniversityForm.controls['name'].dirty ||
+              createUniversityForm.controls['name'].touched)) ||
+          (createUniversityForm.controls['name'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createUniversityForm.controls['name'].errors.required">
+          Nombre de la universidad es requerido
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="url" class="mb-2">Url de la universidad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="url"
+        placeholder="Url de la universidad"
+        formControlName="url"
+      />
+      <div
+        *ngIf="
+          createUniversityForm.controls['url'].invalid &&
+          (createUniversityForm.controls['url'].dirty ||
+            createUniversityForm.controls['url'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createUniversityForm.controls['url'].errors.required">
+          Url es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="imageUrl" class="mb-2">Imagen url de la universidad</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageUrl"
+        placeholder="Imagen url de la facultad"
+        formControlName="imageUrl"
+      />
+      <div
+        *ngIf="
+          createUniversityForm.controls['imageUrl'].invalid &&
+          (createUniversityForm.controls['imageUrl'].dirty ||
+            createUniversityForm.controls['imageUrl'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createUniversityForm.controls['imageUrl'].errors.required">
+          Image url es requerido
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+      style="width: 100%"
+      type="submit"
+    >
+      Guardar nueva universidad
+    </button>
+    <div class="mt-2">
+      <button
+        class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+        [routerLink]="['../']"
+        type="button"
+      >
+        Volver
+      </button>
+    </div>
+  </form>
+</div>

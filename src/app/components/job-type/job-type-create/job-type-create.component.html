@@ -1,0 +1,50 @@
+<div class="container">
+  <form
+    class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+    [formGroup]="createJobTypeForm"
+    (ngSubmit)="submit()"
+  >
+    <h1 class="h3 mb-3 fw-normal">Agregar tipo de trabajo</h1>
+
+    <div class="form-group mb-2">
+      <label for="name" class="mb-2">Tipo de trabajo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        placeholder="Nombre del tipo de trabajo"
+        formControlName="name"
+      />
+      <div
+        *ngIf="
+          (createJobTypeForm.controls['name'].invalid &&
+            (createJobTypeForm.controls['name'].dirty ||
+              createJobTypeForm.controls['name'].touched)) ||
+          (createJobTypeForm.controls['name'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobTypeForm.controls['name'].errors.required">
+          Tipo de trabajo es requerido
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+      style="width: 100%"
+      type="submit"
+    >
+      Guardar nuevo tipo de trabajo
+    </button>
+    <div class="mt-2">
+      <button
+        class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+        [routerLink]="['../']"
+        type="button"
+      >
+        Volver
+      </button>
+    </div>
+  </form>
+</div>

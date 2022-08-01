@@ -1,0 +1,110 @@
+<section class="bg-light text-dark p-5 pg-lg-0" id="project">
+  <div class="container">
+    <h2 class="twelve-margin-bottom">Mis Proyectos Recientes</h2>
+    <p class="thirty-two-margin-bottom">
+      He realizado trabajos para agencias, startups y he colaborado con gente
+      con talento para crear productos web tanto para empresas como para
+      consumidores. Aquí tienes algunos de esos proyectos en los que he
+      trabajado recientemente:
+      <button
+        *ngIf="isLoggedIn"
+        class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+        [routerLink]="['../project/add']"
+        type="button"
+      >
+        + Agregar Proyecto
+      </button>
+    </p>
+
+    <div class="row text-center g-4">
+      <app-project-detail
+        *ngFor="let proyecto of proyectos"
+        [proyecto]="proyecto"
+        [isLoggedIn]="isLoggedIn"
+      ></app-project-detail>
+      <!-- <div class="col-md">
+        <div class="card text-light card-project sixteen-border-radius">
+          <img
+            src="assets/img/3d-web-presentation-mock-up-psd.jpg"
+            class="card-img sixteen-border-radius img-obj-fit"
+            alt=""
+          />
+          <div
+            class="card-img-overlay text-start d-flex flex-column justify-content-end"
+          >
+            <h3 class="card-title m-0">La Alborada</h3>
+            <p class="p-text-project mb-2">
+              Desarrollo de una app en Android con pasarelas de pagos.
+            </p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-primary-bg-50 six-border-radius"
+                >Ir a la pagina</a
+              >
+              <a
+                href="#"
+                class="btn btn-outline-primary-bg-50 six-border-radius"
+                >Ir al GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card text-light card-project sixteen-border-radius">
+          <img
+            src="assets/img/3d-web-presentation-mock-up-psd.jpg"
+            class="card-img sixteen-border-radius img-obj-fit"
+            alt=""
+          />
+          <div
+            class="card-img-overlay text-start d-flex flex-column justify-content-end"
+          >
+            <h3 class="card-title m-0">Hybrid</h3>
+            <p class="p-text-project mb-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              quidem repudiandae odit veritatis autem! Atque!
+            </p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-primary-bg-50 six-border-radius"
+                >Ir a la pagina</a
+              >
+              <a
+                href="#"
+                class="btn btn-outline-primary-bg-50 six-border-radius"
+                >Ir al GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card text-light card-project sixteen-border-radius">
+          <img
+            src="assets/img/3d-web-presentation-mock-up-psd.jpg"
+            class="card-img sixteen-border-radius img-obj-fit"
+            alt=""
+          />
+          <div
+            class="card-img-overlay text-start d-flex flex-column justify-content-end"
+          >
+            <h3 class="card-title m-0">In Person</h3>
+            <p class="p-text-project mb-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              quidem repudiandae odit veritatis autem! Atque!
+            </p>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-primary-bg-50 six-border-radius"
+                >Ir a la pagina</a
+              >
+              <a
+                href="#"
+                class="btn btn-outline-primary-bg-50 six-border-radius"
+                >Ir al GitHub</a
+              >
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>

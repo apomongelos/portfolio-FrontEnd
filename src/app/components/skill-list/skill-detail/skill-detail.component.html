@@ -1,0 +1,29 @@
+<div class="col">
+  <div class="card eight-border-radius p-0">
+    <div class="card-body">
+      <div class="d-flex align-items-center">
+        <div class="card-body p-0">
+          <h4 class="card-title m-0">{{ userSkill.skill.name }}</h4>
+        </div>
+        <div class="img-skill d-flex align-items-center">
+          <img
+            src="{{ userSkill.skill.imageUrl }}"
+            class="img-fluid"
+            alt="logo skill"
+          />
+        </div>
+        <div *ngIf="isLoggedIn" class="float-end">
+          <button
+            class="btn btn-primary-bg-500 text-light six-border-radius"
+            style="line-height: 22.4px; font-weight: 600"
+            [routerLink]="['../skill/update']"
+            [queryParams]="{ skillId: userSkill.skill.id }"
+            type="button"
+          >
+            <fa-icon [icon]="faPen"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

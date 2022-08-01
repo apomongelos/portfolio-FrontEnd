@@ -1,0 +1,245 @@
+<div class="container">
+  <form
+    class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+    [formGroup]="createJobForm"
+    (ngSubmit)="submit()"
+  >
+    <h1 class="h3 mb-3 fw-normal">Agregar experiencia de trabajo</h1>
+
+    <div class="form-group mb-2">
+      <div class="mb-2">
+        <label for="company" class="mb-2">Compañia</label>
+        <button
+          class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+          [routerLink]="['./company']"
+          type="button"
+        >
+          + Agregar compañia
+        </button>
+      </div>
+      <select class="form-control" id="company" formControlName="company">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let company of companies" [value]="company.id">
+          {{ company.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          (createJobForm.controls['company'].invalid &&
+            (createJobForm.controls['company'].dirty ||
+              createJobForm.controls['company'].touched)) ||
+          (createJobForm.controls['company'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobForm.controls['company'].errors.required">
+          Nombre de la compañia es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="profileDescription" class="mb-2"
+        >Descripcion del perfil</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="profileDescription"
+        placeholder="Descripcion del perfil"
+        formControlName="profileDescription"
+      />
+      <div
+        *ngIf="
+          (createJobForm.controls['profileDescription'].invalid &&
+            (createJobForm.controls['profileDescription'].dirty ||
+              createJobForm.controls['profileDescription'].touched)) ||
+          (createJobForm.controls['profileDescription'].untouched &&
+            isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="createJobForm.controls['profileDescription'].errors.required"
+        >
+          Descripcion es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="startDate" class="mb-2">Fecha de inicio</label>
+      <input
+        type="text"
+        class="form-control"
+        id="startDate"
+        placeholder="yyyy-MM-dd"
+        formControlName="startDate"
+      />
+      <div
+        *ngIf="
+          (createJobForm.controls['startDate'].invalid &&
+            (createJobForm.controls['startDate'].dirty ||
+              createJobForm.controls['startDate'].touched)) ||
+          (createJobForm.controls['startDate'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobForm.controls['startDate'].errors.pattern">
+          Ingrese una fecha de inicio con el formato yyyy-MM-dd
+        </div>
+        <div *ngIf="createJobForm.controls['startDate'].errors.required">
+          Fecha de inicio es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="endDate" class="mb-2">Fecha de fin</label>
+      <input
+        type="text"
+        class="form-control"
+        id="endDate"
+        placeholder="yyyy-MM-dd"
+        formControlName="endDate"
+      />
+      <div
+        *ngIf="
+          createJobForm.controls['endDate'].invalid &&
+          (createJobForm.controls['endDate'].dirty ||
+            createJobForm.controls['endDate'].touched)
+        "
+      >
+        <div
+          *ngIf="createJobForm.controls['endDate'].errors.pattern"
+          class="alert alert-danger"
+        >
+          Ingrese una fecha de fin con el formato yyyy-MM-dd
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="imageUrl" class="mb-2">Imagen url</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageUrl"
+        placeholder="Imagen url"
+        formControlName="imageUrl"
+      />
+      <div
+        *ngIf="
+          createJobForm.controls['imageUrl'].invalid &&
+          (createJobForm.controls['imageUrl'].dirty ||
+            createJobForm.controls['imageUrl'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobForm.controls['imageUrl'].errors.required">
+          Imagen url es requerido
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <div class="mb-2">
+        <label for="city" class="mb-2">Ciudad</label>
+        <button
+          class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+          [routerLink]="['./city']"
+          type="button"
+        >
+          + Agregar ciudad
+        </button>
+      </div>
+      <select class="form-control" id="city" formControlName="city">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let city of cities" [value]="city.id">
+          {{ city.name }} - {{ city.region.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          (createJobForm.controls['city'].invalid &&
+            (createJobForm.controls['city'].dirty ||
+              createJobForm.controls['city'].touched)) ||
+          (createJobForm.controls['city'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobForm.controls['city'].errors.required">
+          Seleccione una ciudad
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <div class="mb-2">
+        <label for="jobType" class="mb-2">Tipo de trabajo</label>
+        <button
+          class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+          [routerLink]="['./job-type']"
+          type="button"
+        >
+          + Agregar tipo de trabajo
+        </button>
+      </div>
+      <select class="form-control" id="jobType" formControlName="jobType">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let jobType of jobTypes" [value]="jobType.id">
+          {{ jobType.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          (createJobForm.controls['jobType'].invalid &&
+            (createJobForm.controls['jobType'].dirty ||
+              createJobForm.controls['jobType'].touched)) ||
+          (createJobForm.controls['jobType'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobForm.controls['jobType'].errors.required">
+          Seleccione un tipo de trabajo
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <div class="mb-2">
+        <label for="jobTitle" class="mb-2">Titulo del trabajo</label>
+        <button
+          class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+          [routerLink]="['./job-title']"
+          type="button"
+        >
+          + Agregar titulo del trabajo
+        </button>
+      </div>
+      <select class="form-control" id="jobTitle" formControlName="jobTitle">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let jobTitle of jobTitles" [value]="jobTitle.id">
+          {{ jobTitle.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="
+          (createJobForm.controls['jobTitle'].invalid &&
+            (createJobForm.controls['jobTitle'].dirty ||
+              createJobForm.controls['jobTitle'].touched)) ||
+          (createJobForm.controls['jobTitle'].untouched && isSubmitted)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="createJobForm.controls['jobTitle'].errors.required">
+          Seleccione una opcion de trabajo
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+      style="width: 100%"
+      type="submit"
+    >
+      Guardar nueva experiencia laboral
+    </button>
+  </form>
+</div>

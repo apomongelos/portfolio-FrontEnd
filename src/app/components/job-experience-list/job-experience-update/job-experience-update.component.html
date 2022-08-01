@@ -1,0 +1,180 @@
+<div class="container">
+  <form
+    class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+    [formGroup]="updateJobForm"
+    (ngSubmit)="submit()"
+  >
+    <h1 class="h3 mb-3 fw-normal">Modificar una experiencia de trabajo</h1>
+
+    <div class="form-group mb-2">
+      <label for="company" class="mb-2">Compañia</label>
+      <select class="form-control" id="company" formControlName="company">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let company of companies" [value]="company.id">
+          {{ company.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="updateJobForm.controls['company'].invalid && isSubmitted"
+        class="alert alert-danger"
+      >
+        <div *ngIf="updateJobForm.controls['company'].errors.required">
+          Nombre de la compañia es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="profileDescription" class="mb-2"
+        >Descripcion del perfil</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="profileDescription"
+        placeholder="Descripcion del perfil"
+        formControlName="profileDescription"
+      />
+      <div
+        *ngIf="
+          updateJobForm.controls['profileDescription'].invalid && isSubmitted
+        "
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="updateJobForm.controls['profileDescription'].errors.required"
+        >
+          Descripcion es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="startDate" class="mb-2">Fecha de inicio</label>
+      <input
+        type="text"
+        class="form-control"
+        id="startDate"
+        placeholder="yyyy-MM-dd"
+        formControlName="startDate"
+      />
+      <div
+        *ngIf="updateJobForm.controls['startDate'].invalid && isSubmitted"
+        class="alert alert-danger"
+      >
+        <div *ngIf="updateJobForm.controls['startDate'].errors.pattern">
+          Ingrese una fecha de inicio con el formato yyyy-MM-dd
+        </div>
+        <div *ngIf="updateJobForm.controls['startDate'].errors.required">
+          Fecha de inicio es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="endDate" class="mb-2">Fecha de fin</label>
+      <input
+        type="text"
+        class="form-control"
+        id="endDate"
+        placeholder="yyyy-MM-dd"
+        formControlName="endDate"
+      />
+      <div
+        *ngIf="
+          updateJobForm.controls['endDate'].invalid &&
+          (updateJobForm.controls['endDate'].dirty ||
+            updateJobForm.controls['endDate'].touched)
+        "
+      >
+        <div
+          *ngIf="updateJobForm.controls['endDate'].errors.pattern"
+          class="alert alert-danger"
+        >
+          Ingrese una fecha de fin con el formato yyyy-MM-dd
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="imageUrl" class="mb-2">Imagen url</label>
+      <input
+        type="text"
+        class="form-control"
+        id="imageUrl"
+        placeholder="Imagen url"
+        formControlName="imageUrl"
+      />
+      <div
+        *ngIf="
+          updateJobForm.controls['imageUrl'].invalid &&
+          (updateJobForm.controls['imageUrl'].dirty ||
+            updateJobForm.controls['imageUrl'].touched)
+        "
+        class="alert alert-danger"
+      >
+        <div *ngIf="updateJobForm.controls['imageUrl'].errors.required">
+          Imagen url es requerido
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="city" class="mb-2">Ciudad</label>
+      <select class="form-control" id="city" formControlName="city">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let city of cities" [value]="city.id">
+          {{ city.name }} - {{ city.region.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="updateJobForm.controls['city'].invalid && isSubmitted"
+        class="alert alert-danger"
+      >
+        <div *ngIf="updateJobForm.controls['city'].errors.required">
+          Seleccione una ciudad
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="jobType" class="mb-2">Tipo de trabajo</label>
+      <select class="form-control" id="jobType" formControlName="jobType">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let jobType of jobTypes" [value]="jobType.id">
+          {{ jobType.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="updateJobForm.controls['jobType'].invalid && isSubmitted"
+        class="alert alert-danger"
+      >
+        <div *ngIf="updateJobForm.controls['jobType'].errors.required">
+          Seleccione un tipo de trabajo
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group mb-2">
+      <label for="jobTitle" class="mb-2">Titulo del trabajo</label>
+      <select class="form-control" id="jobTitle" formControlName="jobTitle">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let jobTitle of jobTitles" [value]="jobTitle.id">
+          {{ jobTitle.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="updateJobForm.controls['jobTitle'].invalid && isSubmitted"
+        class="alert alert-danger"
+      >
+        <div *ngIf="updateJobForm.controls['jobTitle'].errors.required">
+          Seleccione una ciudad
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+      style="width: 100%"
+      type="submit"
+    >
+      Modificar experiencia laboral
+    </button>
+  </form>
+</div>

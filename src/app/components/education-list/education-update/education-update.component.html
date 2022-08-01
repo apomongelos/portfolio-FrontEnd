@@ -1,0 +1,119 @@
+<div class="container">
+  <form
+    class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+    [formGroup]="updateEducationForm"
+    (ngSubmit)="submit()"
+  >
+    <h1 class="h3 mb-3 fw-normal">Modificar educacion</h1>
+
+    <div class="form-group mb-2">
+      <label for="degreeName" class="mb-2">Nombre de la carrera</label>
+      <input
+        type="text"
+        class="form-control"
+        id="degreeName"
+        placeholder="Nombre de la carrera"
+        formControlName="degreeName"
+      />
+      <div
+        *ngIf="updateEducationForm.controls['degreeName'].invalid && isSubmitted"
+        class="alert alert-danger"
+      >
+        <!-- (updateEducationForm.controls['degreeName'].dirty ||
+            updateEducationForm.controls['degreeName'].touched)) ||
+        (updateEducationForm.controls['degreeName'].untouched && isSubmitted) -->
+        <div *ngIf="updateEducationForm.controls['degreeName'].errors.required">
+          Nombre de la carrera es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="startDate" class="mb-2">Fecha de inicio</label>
+      <input
+        type="text"
+        class="form-control"
+        id="startingDate"
+        placeholder="yyyy-MM-dd"
+        formControlName="startingDate"
+      />
+      <!-- <div
+        *ngIf="
+          (updateEducationForm.controls['startingDate'].invalid &&
+            (updateEducationForm.controls['startingDate'].dirty ||
+              updateEducationForm.controls['startingDate'].touched)) ||
+          (updateEducationForm.controls['startingDate'].untouched &&
+            isSubmitted)
+        "
+        class="alert alert-danger"
+      > -->
+      <div
+        *ngIf="
+          updateEducationForm.controls['startingDate'].invalid && isSubmitted
+        "
+        class="alert alert-danger"
+      >
+        <div
+          *ngIf="updateEducationForm.controls['startingDate'].errors.pattern"
+        >
+          Ingrese una fecha de inicio con el formato yyyy-MM-dd
+        </div>
+        <div
+          *ngIf="updateEducationForm.controls['startingDate'].errors.required"
+          class="alert alert-danger"
+        >
+          Fecha de inicio es requerido
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="completitionDate" class="mb-2">Fecha de fin</label>
+      <input
+        type="text"
+        class="form-control"
+        id="completitionDate"
+        placeholder="yyyy-MM-dd"
+        formControlName="completitionDate"
+      />
+      <div *ngIf="updateEducationForm.controls['completitionDate'].invalid">
+        <!-- (updateEducationForm.controls['completitionDate'].dirty ||
+            updateEducationForm.controls['completitionDate'].touched) -->
+        <div
+          *ngIf="
+            updateEducationForm.controls['completitionDate'].errors.pattern
+          "
+          class="alert alert-danger"
+        >
+          Ingrese una fecha de fin con el formato yyyy-MM-dd
+        </div>
+      </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="faculty" class="mb-2">Facultad</label>
+      <select class="form-control" id="faculty" formControlName="faculty">
+        <option value="">Seleccione una opcion</option>
+        <option *ngFor="let facultad of faculties" [value]="facultad.id">
+          {{ facultad.name }} - {{ facultad.university.name }}
+        </option>
+      </select>
+      <div
+        *ngIf="updateEducationForm.controls['faculty'].invalid"
+        class="alert alert-danger"
+      >
+        <!-- (updateEducationForm.controls['faculty'].dirty ||
+            updateEducationForm.controls['faculty'].touched)) ||
+        (updateEducationForm.controls['faculty'].untouched && isSubmitted) -->
+        <div *ngIf="updateEducationForm.controls['faculty'].errors.required">
+          Seleccione una facultad
+        </div>
+      </div>
+    </div>
+
+    <button
+      class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+      style="width: 100%"
+      type="submit"
+    >
+      Modificar estudio
+    </button>
+  </form>
+</div>

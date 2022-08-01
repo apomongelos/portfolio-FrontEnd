@@ -1,0 +1,71 @@
+<div class="container">
+    <form
+      class="bg-light text-dark sixteen-border-radius sixty-four-padding"
+      [formGroup]="updateSkillUserForm"
+      (ngSubmit)="submit()"
+    >
+      <h1 class="h3 mb-3 fw-normal">Modificar una habilidad</h1>
+  
+      <!-- <div class="form-group mb-2">
+        <div class="mb-2">
+          <label for="skill" class="mb-2">Habilidad</label>
+          <button
+            class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+            [routerLink]="['./skill']"
+            type="button"
+          >
+            + Agregar habilidad
+          </button>
+        </div>
+        <select class="form-control" id="skill" formControlName="skill">
+          <option value="">Seleccione una opcion</option>
+          <option *ngFor="let skill of skills" [value]="skill.id">
+            {{ skill.name }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            updateSkillUserForm.controls['skill'].invalid &&
+            (updateSkillUserForm.controls['skill'].dirty ||
+              updateSkillUserForm.controls['skill'].touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="updateSkillUserForm.controls['skill'].errors.required">
+            Habilidad es requerido
+          </div>
+        </div>
+      </div> -->
+      <div class="form-group mb-2">
+        <label for="level" class="mb-2">Nivel de la habilidad</label>
+        <input
+          type="text"
+          class="form-control"
+          id="level"
+          placeholder="Nivel de la habilidad"
+          formControlName="level"
+        />
+        <div
+          *ngIf="
+            updateSkillUserForm.controls['level'].invalid &&
+            (updateSkillUserForm.controls['level'].dirty ||
+              updateSkillUserForm.controls['level'].touched)
+          "
+          class="alert alert-danger"
+        >
+          <div *ngIf="updateSkillUserForm.controls['level'].errors.required">
+            Nivel es requerido
+          </div>
+        </div>
+      </div>
+  
+      <button
+        class="btn btn-primary-bg-500 text-light six-border-radius py-2"
+        style="width: 100%"
+        type="submit"
+      >
+        Modificar habilidad
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,19 @@
+<div>
+  <app-header></app-header>
+  <app-about
+    [isLoggedIn]="(this.authService.currentUser$ | async) ? true : false"
+  ></app-about>
+  <app-job-experience-list
+    [isLoggedIn]="(this.authService.currentUser$ | async) ? true : false"
+  ></app-job-experience-list>
+  <app-education-list
+    [isLoggedIn]="(this.authService.currentUser$ | async) ? true : false"
+  ></app-education-list>
+  <app-skill-list
+    [isLoggedIn]="(this.authService.currentUser$ | async) ? true : false"
+  ></app-skill-list>
+  <app-project-list
+    [isLoggedIn]="(this.authService.currentUser$ | async) ? true : false"
+  ></app-project-list>
+  <app-contact></app-contact>
+</div>

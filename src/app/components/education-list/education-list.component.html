@@ -1,0 +1,133 @@
+<section class="bg-light text-dark p-5 pg-lg-0" id="education">
+  <div class="container">
+    <h2 class="text-center twelve-margin-bottom">Educación</h2>
+    <p class="thirty-two-margin-bottom">
+      A lo largo de los años, tuve la oportunidad de formarme en una prestigiosa
+      universidad, culminando con la obtencion del titulo de grado Licenciado en
+      Sistemas de Información. <br />
+      Estos son mis estudios y algunas certificaciones que he obtenido a lo
+      largo de mi carrera profesional:
+      <button
+        *ngIf="isLoggedIn"
+        class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+        [routerLink]="['../education/add']"
+        type="button"
+      >
+        + Agregar Educacion
+      </button>
+    </p>
+    <div class="d-flex flex-column gap-2">
+      <app-education-detail
+        *ngFor="let estudio of estudios"
+        [estudio]="estudio"
+        [isLoggedIn]="isLoggedIn"
+      ></app-education-detail>
+    </div>
+    <!-- <div class="d-flex flex-column gap-2">
+      <div class="card sixteen-border-radius">
+        <div class="card-body py-3 thirty-two-padding">
+          <div class="d-flex align-items-center thirty-two-gap">
+            <div class="img-university d-flex align-items-center">
+              <img
+                src="assets/img/unnemultimedia.normal.b2ba05e96f257d9f.756e6976657273696461642d6e6163696f6e616c2d64656c2d6e6f72646573745f6e6f726d616c2e706e67.png"
+                class="img-fluid"
+                alt="logo empresa"
+              />
+            </div>
+            <div class="card-body p-0">
+              <h4 class="card-title m-0">Lic. En Administración de Empresas</h4>
+              <p class="card-text m-0">
+                Facultad De Humanidades, Universidad De California
+              </p>
+              <p class="card-text"><small>2012-2015</small></p>
+              <div *ngIf="isLoggedIn">
+                <button
+                  class="btn btn-primary-bg-500 py-2 px-4 text-light six-border-radius"
+                  style="line-height: 22.4px; font-weight: 600"
+                >
+                  E
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card sixteen-border-radius">
+        <div class="card-body py-3 thirty-two-padding">
+          <div class="d-flex align-items-center thirty-two-gap">
+            <div class="img-university d-flex align-items-center">
+              <img
+                src="assets/img/unlam.png"
+                class="img-fluid"
+                alt="logo empresa"
+              />
+            </div>
+            <div class="card-body p-0">
+              <h4 class="card-title m-0">Software Engineering</h4>
+              <p class="card-text m-0">
+                Facultad de Ciencias y Datos, Universidad de La Matanza
+              </p>
+              <p class="card-text"><small>2012-2014</small></p>
+              <div *ngIf="isLoggedIn">
+                <button
+                  class="btn btn-primary-bg-500 py-2 px-4 text-light six-border-radius"
+                  style="line-height: 22.4px; font-weight: 600"
+                >
+                  E
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- <div class="row text-center g-4">
+      <div class="col-md">
+        <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-laptop"></i>
+            </div>
+            <h3 class="card-title mb-3">Virtual</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              quidem repudiandae odit veritatis autem! Atque!
+            </p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-secondary text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-person-square"></i>
+            </div>
+            <h3 class="card-title mb-3">Hybrid</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              quidem repudiandae odit veritatis autem! Atque!
+            </p>
+            <a href="#" class="btn btn-dark">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md">
+        <div class="card bg-dark text-light">
+          <div class="card-body text-center">
+            <div class="h1 mb-3">
+              <i class="bi bi-people"></i>
+            </div>
+            <h3 class="card-title mb-3">In Person</h3>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
+              quidem repudiandae odit veritatis autem! Atque!
+            </p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>

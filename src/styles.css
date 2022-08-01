@@ -1,1 +1,217 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bs-body-font-family: "Montserrat", sans-serif;
+}
+
+/* config buttons */
+.btn-primary-bg-50 {
+  background-color: #f2f4f6;
+  color: #001935;
+  border-color: transparent;
+}
+.btn-primary-bg-50:hover {
+  background-color: #e6e9ed;
+}
+.btn-outline-primary-bg-50 {
+  border-color: #f2f4f6;
+  color: #f2f4f6;
+}
+.btn-outline-primary-bg-50:hover {
+  background-color: #f2f4f6;
+}
+.btn-primary-bg-500 {
+  background-color: #002147;
+}
+.btn-primary-bg-500:hover {
+  background-color: #001e40;
+  color: #fff;
+}
+.btn-outline-primary-bg-500 {
+  border-color: #002147;
+  color: #002147;
+}
+.btn-outline-primary-bg-500:hover {
+  background-color: #002147;
+  color: #fff;
+}
+.btn-outline-primary-bg-500-white {
+  border-color: #002147;
+  color: #002147;
+  background-color: white;
+}
+.btn-outline-primary-bg-500-white:hover {
+  background-color: #f2f4f6;
+  color: #002147;
+}
+/* end config buttons */
+
+/* new configuration for typography */
+h1 {
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  font-weight: 700;
+  letter-spacing: -0.08rem;
+}
+h2 {
+  font-size: 3rem;
+  line-height: 4.2rem;
+  font-weight: 700;
+  letter-spacing: 0rem;
+}
+h3 {
+  line-height: 2.45rem;
+  font-weight: 700;
+  letter-spacing: 0.014rem;
+}
+h4 {
+  line-height: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 0.014rem;
+}
+p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  letter-spacing: 0.014rem;
+}
+.p-text-project {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.014rem;
+}
+small {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.014rem;
+}
+button,
+a,
+.btn,
+label,
+input {
+  font-size: 1rem;
+  line-height: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.014rem;
+}
+.nav-link {
+  font-size: 1rem;
+  line-height: 1, 4rem;
+  font-weight: 500;
+  letter-spacing: 0rem;
+  color: #6b7280;
+}
+.navbar-brand {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  color: #001935;
+}
+/* end config typography */
+
+/* padding config */
+.thirty-two-padding {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.sixty-four-padding {
+  padding: 4rem;
+}
+/* end padding config */
+
+/* margin config */
+.twelve-margin-bottom {
+  margin-bottom: 0.75rem;
+}
+.thirty-two-margin-bottom {
+  margin-bottom: 2rem;
+}
+/* end margin config */
+
+/* gap config */
+.twelve-gap {
+  gap: 0.75rem;
+}
+.thirty-two-gap {
+  gap: 2rem;
+}
+/* end gap config */
+
+/* rounded config */
+.sixteen-border-radius {
+  border-radius: 1rem;
+}
+.eight-border-radius {
+  border-radius: 0.5rem;
+}
+.six-border-radius {
+  border-radius: 0.375rem;
+}
+/* end rounded config */
+
+/* img config */
+.img-company {
+  height: 5.125rem;
+  width: 5.125rem;
+}
+
+.img-university {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.img-skill {
+  height: 3rem;
+  width: 3rem;
+}
+
+.img-about {
+  width: 100%;
+  height: 464px;
+  border-radius: 12px;
+  object-fit: cover;
+  position: relative;
+  margin-top: -32px;
+  margin-bottom: -32px;
+}
+/* end img config */
+
+/* badge config */
+.badge {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1rem;
+  letter-spacing: 0.014rem;
+}
+/*  end badge config */
+
+/* card config */
+.card-project {
+  position: block;
+  height: 28.125rem;
+}
+.card-project:before {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.15) 26.04%,
+    #383838 72.92%
+  );
+  border-radius: 1rem;
+}
+/* end card config */
+
+.img-obj-fit {
+  object-fit: cover;
+  height: 100%;
+}
+.back-blob {
+  background-image: url(/assets/img/blob-header.svg);
+  background-position: center;
+  background-size: cover;
+}

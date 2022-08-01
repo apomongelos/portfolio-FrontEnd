@@ -1,0 +1,71 @@
+<p>nav-bar works!</p>
+<nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
+  <div class="container">
+    <a
+      [routerLink]="['/home']"
+      fragment="header"
+      class="navbar-brand brand-header erie-black"
+      >#YoProgramo</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navmenu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/home']" fragment="about" class="nav-link"
+            >Acerca de</a
+          >
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/home']" fragment="job-experience" class="nav-link"
+            >Experiencia</a
+          >
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/home']" fragment="education" class="nav-link"
+            >Educación</a
+          >
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/home']" fragment="skill" class="nav-link"
+            >Habilidades</a
+          >
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/home']" fragment="project" class="nav-link"
+            >Proyectos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/home']" fragment="contact" class="nav-link"
+            >Contacto</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="!(this.authService.currentUser$ | async)">
+      <button
+        class="btn btn-primary-bg-500 py-2 px-4 text-light six-border-radius"
+        style="line-height: 22.4px; font-weight: 600"
+        routerLink="/login"
+      >
+        Login
+      </button>
+    </div>
+    <div *ngIf="this.authService.currentUser$ | async">
+      <button
+        class="btn btn-primary-bg-500 py-2 px-4 text-light six-border-radius"
+        style="line-height: 22.4px; font-weight: 600"
+        (click)="logout()"
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+</nav>

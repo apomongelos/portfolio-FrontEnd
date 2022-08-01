@@ -1,0 +1,61 @@
+<section
+  class="bg-light text-dark p-5 pg-lg-0 text-center text-sm-start back-blob d-flex align-items-center"
+  id="header"
+  style="height: 100vh"
+>
+  <div class="container">
+    <div class="d-sm-flex align-items-center justify-content-between">
+      <div>
+        <h1 class="oxford-blue">Hola, soy Apo, Desarrollador de software.</h1>
+        <p class="lead sub-title">
+          Diseño y construyo aplicaciones web.<br />
+          Soy de Corrientes, Argentina.
+        </p>
+        <div class="d-flex gap-2">
+          <button
+            class="btn btn-primary-bg-500 py-2 px-4 text-light six-border-radius"
+            [routerLink]="['/home']"
+            fragment="about"
+          >
+            Mas información
+          </button>
+          <button
+            class="btn btn-outline-primary-bg-500 py-2 px-4 six-border-radius"
+            [routerLink]="['/home']"
+            fragment="contact"
+          >
+            ¡Contáctame!
+          </button>
+        </div>
+        <p
+          style="
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 0.66px;
+            font-weight: 500;
+            font-variant: small-caps;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          "
+        >
+          encuentrame en
+        </p>
+        <div style="margin-bottom: 20px">
+          <p style="font-size: 28px">
+            <fa-icon [icon]="faGithub"></fa-icon>
+            <fa-icon [icon]="faLinkedin"></fa-icon>
+            <fa-icon [icon]="faTwitter"></fa-icon>
+            <!-- <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-twitter"></i> -->
+          </p>
+        </div>
+      </div>
+      <img
+        class="img-fluid w-50 d-none d-sm-block"
+        src="assets/img/undraw_programming_re_kg9v.svg"
+        alt=""
+      />
+    </div>
+  </div>
+</section>

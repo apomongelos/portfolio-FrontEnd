@@ -1,0 +1,104 @@
+<div class="card sixteen-border-radius">
+  <div class="card-body py-3 thirty-two-padding">
+    <div class="d-flex align-items-center thirty-two-gap">
+      <div class="img-company d-flex align-items-center">
+        <img
+          src="{{ experiencia.imageUrl }}"
+          class="img-fluid"
+          alt="logo empresa"
+        />
+      </div>
+      <div class="card-body p-0">
+        <div class="d-flex flex-row align-items-center mb-2 twelve-gap">
+          <h4 class="card-title m-0">{{ experiencia.company.name }}</h4>
+          <span class="badge rounded-pill bg-secondary py-1 px-2">{{
+            experiencia.jobTitle.name
+          }}</span>
+        </div>
+        <div *ngIf="isLoggedIn" class="float-end">
+          <button
+            class="btn btn-primary-bg-500 text-light six-border-radius"
+            style="line-height: 22.4px; font-weight: 600"
+            [routerLink]="['../job-experience/update']"
+            [queryParams]="{ experienciaId: experiencia.id }"
+            type="button"
+          >
+            <fa-icon [icon]="faPen"></fa-icon>
+          </button>
+        </div>
+        <p class="card-text m-0">
+          {{ experiencia.profileDescription }}
+        </p>
+        <p class="card-text m-0">
+          {{ experiencia.city.name }}, {{ experiencia.city.region.name }},
+          {{ experiencia.city.region.country.name }}
+        </p>
+        <p class="card-text">
+          <small
+            >{{ experiencia.startDate | slice: 0:4 }}-{{
+              experiencia.endDate
+                ? (experiencia.endDate | slice: 0:4)
+                : "Presente"
+            }}</small
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="card sixteen-border-radius">
+  <div class="card-body py-3 thirty-two-padding">
+    <div class="d-flex align-items-center thirty-two-gap">
+      <div class="img-company d-flex align-items-center">
+        <img
+          src="assets/img/jbl-logo-9.png"
+          class="img-fluid"
+          alt="logo empresa"
+        />
+      </div>
+      <div class="card-body p-0">
+        <div class="d-flex flex-row align-items-center mb-2 twelve-gap">
+          <h4 class="card-title m-0">Free Front End</h4>
+          <span class="badge rounded-pill bg-secondary py-1 px-2"
+            >Front-end developer</span
+          >
+        </div>
+        <p class="card-text m-0">
+          Organizing ideas and create an app with Angular 2.0.
+        </p>
+        <p class="card-text m-0">Cordoba Capital, Cordoba, Argentina</p>
+        <p class="card-text"><small>2015-2017</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card sixteen-border-radius">
+  <div class="card-body py-3 thirty-two-padding">
+    <div class="d-flex align-items-center thirty-two-gap">
+      <div class="img-company d-flex align-items-center">
+        <img
+          src="assets/img/seratoc8c6ff1e43cc68644bc4c8db0ae5fbed.jpg"
+          class="img-fluid"
+          alt="logo empresa"
+        />
+      </div>
+      <div class="card-body p-0">
+        <div class="d-flex flex-row align-items-center mb-2 twelve-gap">
+          <h4 class="card-title m-0">Go Land</h4>
+          <span class="badge rounded-pill bg-secondary py-1 px-2"
+            >Back-end developer</span
+          >
+        </div>
+        <p class="card-text m-0">
+          Helping to create APIs rest with Laravel framework.
+        </p>
+        <p class="card-text m-0">
+          Ciudad De Buenos Aires, Buenos Aires, Argentina
+        </p>
+        <p class="card-text"><small>2014-2015</small></p>
+      </div>
+    </div> 
+  </div> 
+</div> -->

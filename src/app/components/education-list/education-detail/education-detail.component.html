@@ -1,0 +1,41 @@
+<div class="card sixteen-border-radius">
+  <div class="card-body py-3 thirty-two-padding">
+    <div class="d-flex align-items-center thirty-two-gap">
+      <div class="img-university d-flex align-items-center">
+        <img
+          src="{{ estudio.faculty.university.imageUrl }}"
+          class="img-fluid"
+          alt="logo universidad"
+        />
+      </div>
+      <div class="card-body p-0">
+        <div>
+          <h4 class="card-title m-0">{{ estudio.degreeName }}</h4>
+          <div *ngIf="isLoggedIn" class="float-end">
+            <button
+              class="btn btn-primary-bg-500 text-light six-border-radius"
+              style="line-height: 22.4px; font-weight: 600"
+              [routerLink]="['../education/update']"
+              [queryParams]="{ educacionId: estudio.id }"
+              type="button"
+            >
+              <fa-icon [icon]="faPen"></fa-icon>
+            </button>
+          </div>
+        </div>
+        <p class="card-text m-0">
+          {{ estudio.faculty.name }}, {{ estudio.faculty.university.name }}
+        </p>
+        <p class="card-text">
+          <small
+            >{{ estudio.startingDate | slice: 0:4 }}-{{
+              estudio.completitionDate
+                ? (estudio.completitionDate | slice: 0:4)
+                : "Presente"
+            }}</small
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

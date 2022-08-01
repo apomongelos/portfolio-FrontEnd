@@ -1,0 +1,42 @@
+<div class="col-md">
+  <div class="card text-light card-project sixteen-border-radius">
+    <img
+      src="{{ proyecto.imageUrl }}"
+      class="card-img sixteen-border-radius img-obj-fit"
+      alt=""
+    />
+    <div
+      class="card-img-overlay text-start d-flex flex-column justify-content-end"
+    >
+      <h3 class="card-title m-0">{{ proyecto.name }}</h3>
+      <p class="p-text-project mb-2">
+        {{ proyecto.description }}
+      </p>
+      <div class="d-flex gap-2">
+        <a
+          href="http://{{ proyecto.url }}"
+          target="_blank"
+          class="btn btn-primary-bg-50 six-border-radius"
+          >Ir a la pagina</a
+        >
+        <a
+          href="http://{{ proyecto.githubUrl }}"
+          target="_blank"
+          class="btn btn-outline-primary-bg-50 six-border-radius"
+          >Ir al GitHub</a
+        >
+        <div *ngIf="isLoggedIn" class="float-end">
+          <button
+            class="btn btn-primary-bg-500 text-light six-border-radius"
+            style="line-height: 22.4px; font-weight: 600"
+            [routerLink]="['../project/update']"
+            [queryParams]="{ proyectoId: proyecto.id }"
+            type="button"
+          >
+            <fa-icon [icon]="faPen"></fa-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

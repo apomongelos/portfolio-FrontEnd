@@ -1,0 +1,109 @@
+<section class="bg-light text-dark p-5 pg-lg-0" id="job-experience">
+  <div class="container">
+    <h2 class="text-center twelve-margin-bottom">Experiencia</h2>
+    <p class="thirty-two-margin-bottom">
+      El área principal de mi experiencia es el desarrollo full-stack, creando
+      pequeñas y medianas aplicaciones web que son rápidas, fáciles de usar y
+      construidas con las mejores prácticas. <br />
+      Estoy orgulloso de haber colaborado con empresas increíbles, algunas de
+      ellas son:
+      <button
+        *ngIf="isLoggedIn"
+        class="btn btn-outline-primary-bg-500 six-border-radius btn-sm float-end"
+        [routerLink]="['../job-experience/add']"
+        type="button"
+      >
+        + Agregar Experiencia
+      </button>
+    </p>
+    <div class="d-flex flex-column gap-2">
+      <app-job-experience-detail
+        *ngFor="let experiencia of experiencias"
+        [experiencia]="experiencia"
+        [isLoggedIn]="isLoggedIn"
+      ></app-job-experience-detail>
+      <!-- <div class="card sixteen-border-radius">
+        <div class="card-body py-3 thirty-two-padding">
+          <div class="d-flex align-items-center thirty-two-gap">
+            <div class="img-company d-flex align-items-center">
+              <img
+                src="assets/img/deviantartlogosocialsocialmedia-115695_115606.png"
+                class="img-fluid"
+                alt="logo empresa"
+              />
+            </div>
+            <div class="card-body p-0">
+              <div class="d-flex flex-row align-items-center mb-2 twelve-gap">
+                <h4 class="card-title m-0">DevLabs</h4>
+                <span class="badge rounded-pill bg-secondary py-1 px-2"
+                  >Back-end developer</span
+                >
+              </div>
+              <p class="card-text m-0">
+                Helping to create APIs rest with spring boot framework.
+              </p>
+              <p class="card-text m-0">Resistencia, Chaco, Argentina</p>
+              <p class="card-text"><small>2017-2018</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card sixteen-border-radius">
+        <div class="card-body py-3 thirty-two-padding">
+          <div class="d-flex align-items-center thirty-two-gap">
+            <div class="img-company d-flex align-items-center">
+              <img
+                src="assets/img/jbl-logo-9.png"
+                class="img-fluid"
+                alt="logo empresa"
+              />
+            </div>
+            <div class="card-body p-0">
+              <div class="d-flex flex-row align-items-center mb-2 twelve-gap">
+                <h4 class="card-title m-0">Free Front End</h4>
+                <span class="badge rounded-pill bg-secondary py-1 px-2"
+                  >Front-end developer</span
+                >
+              </div>
+              <p class="card-text m-0">
+                Organizing ideas and create an app with Angular 2.0.
+              </p>
+              <p class="card-text m-0">Cordoba Capital, Cordoba, Argentina</p>
+              <p class="card-text"><small>2015-2017</small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card sixteen-border-radius">
+        <div class="card-body py-3 thirty-two-padding">
+          <div class="d-flex align-items-center thirty-two-gap">
+            <div class="img-company d-flex align-items-center">
+              <img
+                src="assets/img/seratoc8c6ff1e43cc68644bc4c8db0ae5fbed.jpg"
+                class="img-fluid"
+                alt="logo empresa"
+              />
+            </div>
+            <div class="card-body p-0">
+              <div class="d-flex flex-row align-items-center mb-2 twelve-gap">
+                <h4 class="card-title m-0">Go Land</h4>
+                <span class="badge rounded-pill bg-secondary py-1 px-2"
+                  >Back-end developer</span
+                >
+              </div>
+              <p class="card-text m-0">
+                Helping to create APIs rest with Laravel framework.
+              </p>
+              <p class="card-text m-0">
+                Ciudad De Buenos Aires, Buenos Aires, Argentina
+              </p>
+              <p class="card-text"><small>2014-2015</small></p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</section>
