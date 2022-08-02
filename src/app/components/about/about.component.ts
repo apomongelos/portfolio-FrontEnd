@@ -15,7 +15,7 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService
-      .getUserByEmail('carlos@gmail.com')
+      .getUserByEmail('fernando@correo.com')
       .subscribe((user) => (this.usr = user));
   }
 }
